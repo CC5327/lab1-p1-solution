@@ -20,3 +20,11 @@ The previous command will create three files:
 * `public_key.pem`: Public Key that encrypted the message.
 
 Given the private key is lost, I guarantee that you will never be able to decipher the ciphered text!
+
+
+### Solution
+
+We use `Decimal` library to operate with big numbers without the need of installing C libraries. 
+
+The error on the implementation is on the function `next_prime`. That function makes the two primes so close that it is easy to find them if we start the search in `sqrt(n)`. Then, we can use the functions in `utils` library to create the secret key and decrypt the message.
+
