@@ -42,11 +42,11 @@ def miller_rabin(n, k):
     :param k: number of times to make the check
     :return true if number is probably prime, false otherwise:
     """
-    if n % 2 == 0:
+    if n == 1:
+        return False
+    elif n % 2 == 0:
         return n == 2  # return true only if n is pair and 2, if it is pair and not 2 return false
-    elif n == 3:
-        return True
-    elif n == 5:
+    elif n == 3 or n == 5:
         return True
     d = n - 1
     r = 0
